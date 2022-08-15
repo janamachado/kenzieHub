@@ -1,0 +1,7 @@
+.showModal{
+    display: flex;
+}
+
+.hiddenModal{
+    visibility: hidden;
+}

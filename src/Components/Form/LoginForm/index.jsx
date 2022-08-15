@@ -2,14 +2,15 @@ import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
-import { kenzieHubApi } from '../../../Services/kenzieHubApi';
+import {useContext } from 'react'
+import { AuthContext } from '../../../contexts/AuthContext';
 
-import { toast } from 'react-toastify';
 import { DivContainer, FormLogin, DivTitle, InputLogin, ButtonLogin, ButtonRegister, Error } from './styles';
 
 const LoginForm = () =>{
 
     const navigate = useNavigate()
+    const {signIn} = useContext(AuthContext)
 
     function goRegister (){
         navigate('/Register')
@@ -25,24 +26,9 @@ const LoginForm = () =>{
         resolver: yupResolver(formSchema)
     })
 
-    const onSubmitFn = (data) =>{
-        kenzieHubApi.post('/sessions', data)
-        .then((res)=>{
-            console.log(res)
-
-            localStorage.setItem('KenzieHub:userId', res.data.user.id)
-            localStorage.setItem('KenzieHub:token', res.data.token)
-            toast.success('Login feito com sucesso!', {autoClose: 2000})
-            setTimeout(()=>{
-                navigate('/Dashboard')
-            }, 1000)
-        })
-        .catch((err)=> toast.error('Login e/ou senha inválidos'))
-    }
-
     return (
         <DivContainer>
-            <FormLogin onSubmit={handleSubmit(onSubmitFn)}>
+            <FormLogin onSubmit={handleSubmit(signIn)}>
 
                 <DivTitle>
                     <h1>Login</h1>

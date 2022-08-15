@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const DivContainer = styled.div`
+export const DivHeader = styled.div`
     display: flex;
 
 `
@@ -57,9 +57,14 @@ export const Section = styled.section`
 export const Main = styled.main`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
-    margin: 70px 300px;
+
+    color: #fff;
+
+    margin: 0 auto;
+    padding: 20px;
+    width: 560px;
 
     h3{
         color: #fff;
@@ -71,3 +76,37 @@ export const Main = styled.main`
     }
 
 `
+
+export const DivHeaderTechs = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100vw;
+    height: 50px;
+    padding: 7px 7px;
+`
+
+export const ButtonClose = styled.button`
+    background-color: transparent;
+
+    width: 30px;
+    height: 30px;
+
+    border: 2px solid #868E96;
+    border-radius: 20px;
+    color: #868E96;
+    font-weight: 800;
+
+    cursor: pointer;
+    
+    &:hover{
+    border: 2px solid #fff;
+    color: #fff;
+    }
+`
+
+
+
+

@@ -8,12 +8,11 @@ import { DivContainer } from "./styles"
 const Login = () =>{
     return (
         <>
-        <DivContainer>
-            <img src={logo} alt="" />
-        </DivContainer>
-        <LoginForm/>
-    
-    </>
+            <DivContainer>
+                <img src={logo} alt="" />
+            </DivContainer>
+            <LoginForm/>
+        </>
     )
 }
 

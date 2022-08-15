@@ -1,15 +1,14 @@
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigate } from 'react-router-dom';
 
-import { toast } from 'react-toastify';
 import { DivContainer, StyledForm, InputText, ButtonRegister, Error } from './styles';
-import { kenzieHubApi } from '../../../Services/kenzieHubApi';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 const RegisterForm = () =>{
 
-    const navigate = useNavigate()
+    const {registerUser} = useContext(AuthContext)
 
     const formSchema = yup.object().shape({
 
@@ -47,21 +46,9 @@ const RegisterForm = () =>{
         resolver: yupResolver(formSchema)
         })
 
-    const onSubmitFn = (data) =>{
-
-        kenzieHubApi.post('/users', data)
-        .then((res) => {
-            toast.success('Cadastro feito com sucesso! Faça o login.', { autoClose: 2000 })
-            setTimeout(()=>{
-                navigate('/Login')
-            }, 1000)
-        })
-        .catch((err)=> toast.error('Algo deu errado! Confira todos os campos preenchidos', { autoClose: 2000 }))      
-    } 
-
     return (
         <DivContainer>
-            <StyledForm onSubmit={handleSubmit(onSubmitFn)}>
+            <StyledForm onSubmit={handleSubmit(registerUser)}>
                 <div>
                     <h1>Crie sua conta</h1>
                     <p>Rápido e grátis, vamos nessa!</p>
@@ -120,7 +107,6 @@ const RegisterForm = () =>{
                     <option value="m4">M4</option>
                     <option value="m5">M5</option>
                 </select>
-
                 <ButtonRegister type='submit'>Cadastrar</ButtonRegister>
             </StyledForm>
         </DivContainer>
