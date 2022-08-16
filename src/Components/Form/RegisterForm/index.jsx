@@ -29,13 +29,13 @@ const RegisterForm = () =>{
         .matches(/(\W)|_/, "Deve conter ao menos 1 caracter especial")
         .matches(/.{8,}/, "Deve conter ao menos 8 dígitos"),
         
-
         confirmPassword: yup
         .string()
         .required('Campo obrigatório')
         .oneOf([yup.ref('password')], 'A senha deve ser a mesma'),
 
         bio: yup.string(),
+
         contact: yup
         .string()
         .required('Campo obrigatório')
@@ -52,8 +52,8 @@ const RegisterForm = () =>{
                 <div>
                     <h1>Crie sua conta</h1>
                     <p>Rápido e grátis, vamos nessa!</p>
-
                 </div>
+                
                 <label>Nome</label>
                 <InputText
                 type='text'

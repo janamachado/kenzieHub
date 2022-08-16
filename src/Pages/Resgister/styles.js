@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 
-
 export const DivContainer = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 
-    width: 316px;
+    width: 100vw;
     height: 30px;
-    margin-left: 585px;
     margin-top: 30px;
 
     button{
@@ -28,5 +26,4 @@ export const DivContainer = styled.div`
             background-color: #343B41;
         }
     }
-
 `

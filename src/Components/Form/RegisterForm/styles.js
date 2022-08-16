@@ -16,8 +16,6 @@ export const DivContainer = styled.div`
 
     background-color: #212529;
     color: #F8F9FA;
-
-
 `
 
 export const StyledForm = styled.form`
@@ -29,26 +27,21 @@ export const StyledForm = styled.form`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        
     }
-
     h1{
         font-weight: 500;
         font-size: 25px;
         margin-bottom: 10px;
     }
-
     p{
         font-size: 10px;
         color: #868E96;
     }
-
     label{
         font-size: 12px;
         font-weight: 600;
         margin: 7px 0;
     }
-
     select{
         background-color: #212529;
         color: #fff;
@@ -59,23 +52,22 @@ export const StyledForm = styled.form`
 `;
 
 export const InputText = styled.input`
+    width: 250px;
+    height: 33px;
+    
+    padding: 0 8px;
+    border-style: none;
+    border-radius: 4px;
+    font-size: 14px;
+    
+    background-color: #343B41;
+    color: grey;
 
-        width: 250px;
-        height: 33px;
 
-        padding: 0 8px;
+    &:focus-visible {
+        outline: 3px solid #FF577F;
+        border-radius: 5px;
         border-style: none;
-        border-radius: 4px;
-
-        background-color: #343B41;
-        color: grey;
-
-        font-size: 14px;
-
-        &:focus-visible {
-            outline: 3px solid #FF577F;
-            border-radius: 5px;
-            border-style: none;
     }
 `;
 
@@ -83,16 +75,14 @@ export const ButtonRegister = styled.button`
     width: 265px;
     height: 45px;
 
-    border: none;
     cursor: pointer;
-
+    border: none;
     margin-top: 10px;
-    /* padding: 15px; */
     border-radius: 4px;
+    font-weight: 600;
 
     background-color: #FF577F;
     color: #fff;
-    font-weight: 600;
 
     &:hover{
         background-color: #59323F;

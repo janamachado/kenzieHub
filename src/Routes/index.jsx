@@ -10,7 +10,7 @@ const MainRoutes = () =>{
             <Route path='/Login' element={<Login />} />
             <Route path='/Register' element={<Register />} />
             <Route path='/Dashboard' element={<Dashboard />} />
-            <Route path='*' element={<Navigate replace to='/Register'/> } />
+            <Route path='*' element={<Navigate replace to='/Register'/>} />
         </Routes>
     )
 }

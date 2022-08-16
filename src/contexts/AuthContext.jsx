@@ -9,7 +9,6 @@ const AuthProvider = ({children}) =>{
 
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
-
     const navigate = useNavigate()
 
     useEffect(()=>{
@@ -21,7 +20,6 @@ const AuthProvider = ({children}) =>{
                     kenzieHubApi.defaults.headers.authorization = `Bearer ${token}`
                     const {data} = await kenzieHubApi.get('/profile')
                     setUser(data)
-
                 } catch (error) {
                     console.log(error)
                 }
@@ -64,7 +62,6 @@ const AuthProvider = ({children}) =>{
         .then((res)=> setUser(res.data))
         .catch((err)=>console.log(err))
     }
-
 
     return(
         <AuthContext.Provider value={{user, signIn, registerUser, getInfoUser, loading}}>

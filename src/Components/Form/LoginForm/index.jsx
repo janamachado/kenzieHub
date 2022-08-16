@@ -13,7 +13,7 @@ const LoginForm = () =>{
     const {signIn} = useContext(AuthContext)
 
     function goRegister (){
-        navigate('/Register')
+        navigate('/Register', {replace: true})
     }
 
     const formSchema = yup.object().shape({
@@ -53,9 +53,7 @@ const LoginForm = () =>{
             <h3>Ainda não possui uma conta?</h3>
             <ButtonRegister onClick={goRegister}>Cadastre-se</ButtonRegister>
         </DivContainer>
-
     )
-
 }
 
 export default LoginForm

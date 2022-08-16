@@ -2,9 +2,7 @@ import styled from 'styled-components'
 
 export const DivHeader = styled.div`
     display: flex;
-
 `
-
 export const Header = styled.header`
     display: flex;
     flex-direction: row;
@@ -38,27 +36,25 @@ export const Section = styled.section`
     justify-content: space-evenly;
 
     width: 100vw;
-    height: 150px;
+    height: 90px;
 
     box-shadow: 0.3px 0px 0px 0.3px #868E96;
 
     h2{
         color: #fff;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     span{
         color: #868E96;
         font-size: 12px;
     }
-
 `
 
 export const Main = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-
 
     color: #fff;
 
@@ -80,23 +76,27 @@ export const Main = styled.main`
 export const DivHeaderTechs = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     width: 100vw;
-    height: 50px;
-    padding: 7px 7px;
+    height: 30px;
+    h2{
+        font-size: 18px;
+        padding: 0px 50px;
+
+    }
 `
 
 export const ButtonClose = styled.button`
     background-color: transparent;
+    color: #868E96;
 
     width: 30px;
     height: 30px;
 
     border: 2px solid #868E96;
     border-radius: 20px;
-    color: #868E96;
     font-weight: 800;
 
     cursor: pointer;
@@ -106,7 +106,3 @@ export const ButtonClose = styled.button`
     color: #fff;
     }
 `
-
-
-
-

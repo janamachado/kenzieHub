@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 
-
-export const DivContainer = styled.div`
+export const DivContainerLogin = styled.div`
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
 
-    width: 316px;
+    width: 100vw;
     height: 30px;
-    margin-left: 585px;
     margin-top: 50px;
 
     button{

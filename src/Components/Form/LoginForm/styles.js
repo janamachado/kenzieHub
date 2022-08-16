@@ -35,10 +35,10 @@ export const FormLogin = styled.form`
 `
 
 export const DivTitle = styled.div`
-            display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     h1{
     font-weight: 500;
@@ -47,27 +47,26 @@ export const DivTitle = styled.div`
 `
 
 export const InputLogin = styled.input`
-        width: 250px;
-        height: 35px;
+    width: 250px;
+    height: 35px;
 
-        padding: 0 8px;
+    padding: 0 8px;
+    border-style: none;
+    border-radius: 4px;
+
+    background-color: #343B41;
+    color: grey;
+
+    font-size: 14px;
+
+    &:focus-visible {
+        outline: 3px solid #FF577F;
+        border-radius: 5px;
         border-style: none;
-        border-radius: 4px;
-
-        background-color: #343B41;
-        color: grey;
-
-        font-size: 14px;
-
-        &:focus-visible {
-            outline: 3px solid #FF577F;
-            border-radius: 5px;
-            border-style: none;
-        }
+    }
 `
 
 export const ButtonLogin = styled.button`
-
     width: 265px;
     height: 45px;
     border-radius: 4px;
@@ -83,7 +82,6 @@ export const ButtonLogin = styled.button`
     &:hover{
         background-color: #59323F;
     }
-
 `
 
 export const ButtonRegister = styled.button`

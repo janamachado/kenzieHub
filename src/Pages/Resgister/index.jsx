@@ -7,18 +7,18 @@ import { DivContainer } from "./styles"
 const Register = () =>{
 
     const navigate = useNavigate()
+
     function goLogin (){
-        navigate('/Login')
+        navigate('/Login', {replace: true})
     }
+    
     return (
         <>
             <DivContainer>
                 <img src={logo} alt="" />
                 <button onClick={goLogin}>Login</button>
             </DivContainer>
-            
             <Form/>
-        
         </>
     )
 }

@@ -3,12 +3,10 @@ import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-toastify';
-
+import { kenzieHubApi } from '../../Services/kenzieHubApi';
 
 import { ModalAddTechs, DivHeaderAdd, DivForm, Form, Error } from "./styles"
-
 import './styles.js'
-import { kenzieHubApi } from '../../Services/kenzieHubApi';
 
 const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}) =>{
 
@@ -16,6 +14,7 @@ const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}) =>{
         title: yup.string().max(20, 'Máximo de 20 caracteres').required('Campo obrigatório'),
         status: yup.string().required('Campo obrigatório'),
     })
+
     const {
         register,
         handleSubmit,
@@ -23,7 +22,6 @@ const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}) =>{
     }= useForm({resolver: yupResolver(schema)})
 
     const addNewTechs = (data) =>{
-        console.log(data)
         
         kenzieHubApi.post('/users/techs', data)
         .then((res)=>{
@@ -61,12 +59,10 @@ const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}) =>{
                         <option value="Avançado">Avançado</option>
                     </select>
                     <Error>{errors.status?.message}</Error>
-
                 <button type='submit' >Adicionar</button>
                 </Form>
             </DivForm>
         </ModalAddTechs>
-        
     )
 }
 

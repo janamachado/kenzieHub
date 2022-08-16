@@ -1,16 +1,14 @@
 import LoginForm from "../../Components/Form/LoginForm"
-
 import logo from "../../img/Logo.png"
-import { DivContainer } from "./styles"
 
-
+import { DivContainerLogin } from "./styles"
 
 const Login = () =>{
     return (
         <>
-            <DivContainer>
+            <DivContainerLogin>
                 <img src={logo} alt="" />
-            </DivContainer>
+            </DivContainerLogin>
             <LoginForm/>
         </>
     )

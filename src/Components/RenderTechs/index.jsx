@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import {ListTechsDiv, LiTechs} from "./styles"
 
 const RenderTechs = ({allTechs, setAllTechs}) =>{
+
     const userId = localStorage.getItem('KenzieHub:userId')
 
     const getAllTechs = () =>{
@@ -37,23 +38,22 @@ const RenderTechs = ({allTechs, setAllTechs}) =>{
     return (
         <ListTechsDiv>
             {allTechs.length > 0 ? 
-            <ul>
-                {allTechs?.map((item, index)=>(
-                    <LiTechs
-                    key={index}>
-                        <strong>{item?.title}</strong>
-                        <div>
-                            <p>{item?.status}</p>
-                            <span>
-                                <VscTrash onClick={()=>removeTech(item.id)}>Remover</VscTrash>
-                            </span>
-                        </div>
-                    </LiTechs>
-                ))}
-
-            </ul>
+                <ul>
+                    {allTechs?.map((item, index)=>(
+                        <LiTechs key={index}>
+                            <strong>{item?.title}</strong>
+                            <div>
+                                <p>{item?.status}</p>
+                                <span>
+                                    <VscTrash onClick={()=>removeTech(item.id)}>Remover</VscTrash>
+                                </span>
+                            </div>
+                        </LiTechs>
+                    ))}
+                </ul>
             :
-            <h2>Cadastre novas tecnologias</h2>}
+                <h2>Cadastre novas tecnologias</h2>
+            }
         </ListTechsDiv>
     )
 }

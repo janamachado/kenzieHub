@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-
-
 export const ListTechsDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -10,24 +8,23 @@ export const ListTechsDiv = styled.div`
 
     background-color: #212529;
 
-
-    width: 1000px;
+    width: 650px;
     border-radius: 7px;
-
-    padding: 20px 15px;
-    margin: 30px 10px;
+    padding: 15px 15px;
+    margin: 20px 10px;
 
     ul{
-        width: 900px;
         max-height: 300px;
+
         overflow: scroll;
 
         ::-webkit-scrollbar{
             width: 0px;
         }
     }
-
-
+    h2{
+        font-size: 15px ;
+    }
 `
 
 export const LiTechs = styled.li`
@@ -38,10 +35,9 @@ export const LiTechs = styled.li`
 
     background-color: #121214;
 
-    /* width: 950px; */
     height: 50px;
-    padding: 0px 5px;
-
+    width: 600px;
+    padding: 0px 15px;
     margin: 10px 0px;
     border-radius: 7px;
 
@@ -60,8 +56,9 @@ export const LiTechs = styled.li`
 
     span{
         background-color: transparent;
-        border: none;
         color:#868E96;
+        
+        border: none;
         cursor: pointer;
     }
 

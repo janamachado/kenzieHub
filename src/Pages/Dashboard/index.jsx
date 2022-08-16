@@ -2,16 +2,13 @@ import { useNavigate } from "react-router-dom"
 import logo from "../../img/Logo.png"
 import Login from '../Login/index'
 import { useContext, useEffect, useState} from "react";
-
-import { toast } from 'react-toastify';
-import { DivHeader, Header, Section, Main, DivHeaderTechs, ButtonClose} from "./styles"
-import './styled.css'
-
 import { AuthContext } from "../../contexts/AuthContext";
 import AddTechs from "../../Components/AddTechs";
 import RenderTechs from "../../Components/RenderTechs";
 
-
+import { toast } from 'react-toastify';
+import { DivHeader, Header, Section, Main, DivHeaderTechs, ButtonClose} from "./styles"
+import './styled.css'
 
 const Dashboard = () =>{
     const [addModal, setAddModal] = useState(false)
@@ -23,7 +20,7 @@ const Dashboard = () =>{
     function goBack (){
         localStorage.clear('KenzieHub:userId')
         localStorage.clear('KenzieHub:token')
-        navigate('/Login')
+        navigate('/Login', {replace: true})
      }
 
     useEffect(()=>{
@@ -31,7 +28,7 @@ const Dashboard = () =>{
     }, [])
 
 
-     if(loading) return <div>Carregando...</div>
+    if(loading) return <div>Carregando...</div>
      
     return (
         <>

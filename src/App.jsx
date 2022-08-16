@@ -9,12 +9,10 @@ import AuthProvider from './contexts/AuthContext';
 function App() {
   return (
     <div className="App">
-
-        <AuthProvider>
-          <ToastContainer/>
-            <Routes />
-        </AuthProvider>
-
+      <AuthProvider>
+        <ToastContainer/>
+        <Routes />
+      </AuthProvider>
     </div>
   );
 }
