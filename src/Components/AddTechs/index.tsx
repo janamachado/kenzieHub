@@ -6,9 +6,23 @@ import { toast } from 'react-toastify';
 import { kenzieHubApi } from '../../Services/kenzieHubApi';
 
 import { ModalAddTechs, DivHeaderAdd, DivForm, Form, Error } from "./styles"
-import './styles.js'
+import './styles.ts'
 
-const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}) =>{
+export interface ITechs {
+    title: string
+    status: string
+    id: string
+}
+
+export interface IProps {
+    addModal: boolean
+    setAddModal: React.Dispatch<React.SetStateAction<boolean>>
+    allTechs: ITechs[]
+    setAllTechs: React.Dispatch<React.SetStateAction<ITechs[]>>
+    className: string
+}
+
+const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}: IProps) =>{
 
     const schema = yup.object().shape({
         title: yup.string().max(20, 'Máximo de 20 caracteres').required('Campo obrigatório'),
@@ -19,17 +33,17 @@ const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}) =>{
         register,
         handleSubmit,
         formState: {errors},
-    }= useForm({resolver: yupResolver(schema)})
+    }= useForm<ITechs>({resolver: yupResolver(schema)})
 
-    const addNewTechs = (data) =>{
+    const addNewTechs = (data: ITechs) =>{
         
         kenzieHubApi.post('/users/techs', data)
         .then((res)=>{
             setAllTechs([...allTechs, res.data])
-            toast.success('Tecnologia cadastrada com sucesso!', {autoclose: 2000})
+            toast.success('Tecnologia cadastrada com sucesso!', {autoClose: 2000})
         })
         .catch((err)=>{
-            toast.error('Essa tecnologia já está na sua lista', {autoclose: 2000})
+            toast.error('Essa tecnologia já está na sua lista', {autoClose: 2000})
         })
         setAddModal(false)
     }
@@ -52,7 +66,6 @@ const AddTechs = ({addModal, setAddModal, allTechs, setAllTechs}) =>{
                     <Error>{errors.title?.message}</Error>
                     <label>Selecione Status</label>
                     <select
-                    name='status'
                     {... register('status')}>
                         <option value="Iniciante">Iniciante</option>
                         <option value="Intermediário">Intermediário</option>

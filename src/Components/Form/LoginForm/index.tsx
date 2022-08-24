@@ -2,18 +2,21 @@ import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
-import {useContext } from 'react'
-import { AuthContext } from '../../../contexts/AuthContext';
 
 import { DivContainer, FormLogin, DivTitle, InputLogin, ButtonLogin, ButtonRegister, Error } from './styles';
+import { ISignInProps, UseUserContext } from '../../../contexts/AuthContext';
 
 const LoginForm = () =>{
 
     const navigate = useNavigate()
-    const {signIn} = useContext(AuthContext)
+    const {signIn} = UseUserContext()
 
     function goRegister (){
         navigate('/Register', {replace: true})
+    }
+
+    function onSubmit (data: ISignInProps) {
+        signIn(data)
     }
 
     const formSchema = yup.object().shape({
@@ -22,13 +25,13 @@ const LoginForm = () =>{
     })
 
     const {register, handleSubmit, formState: {errors}
-    } = useForm({
+    } = useForm<ISignInProps>({
         resolver: yupResolver(formSchema)
     })
 
     return (
         <DivContainer>
-            <FormLogin onSubmit={handleSubmit(signIn)}>
+            <FormLogin onSubmit={handleSubmit(onSubmit)}>
 
                 <DivTitle>
                     <h1>Login</h1>

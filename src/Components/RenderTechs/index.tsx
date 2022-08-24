@@ -5,8 +5,14 @@ import {VscTrash} from 'react-icons/vsc'
 
 import { toast } from 'react-toastify';
 import {ListTechsDiv, LiTechs} from "./styles"
+import { ITechs } from "../AddTechs";
 
-const RenderTechs = ({allTechs, setAllTechs}) =>{
+export interface IRegisterProps{
+    allTechs: ITechs[]
+    setAllTechs: React.Dispatch<React.SetStateAction<ITechs[]>>
+}
+
+const RenderTechs = ({allTechs, setAllTechs}: IRegisterProps) =>{
 
     const userId = localStorage.getItem('KenzieHub:userId')
 
@@ -16,7 +22,7 @@ const RenderTechs = ({allTechs, setAllTechs}) =>{
             setAllTechs([...res.data.techs])
         })
         .catch((err)=>{
-            toast.error('Ocorreu algum erro na visualização das sua tecnologias', {autoclose: 1000})
+            toast.error('Ocorreu algum erro na visualização das sua tecnologias', {autoClose: 1000})
         })
     }
 
@@ -24,14 +30,14 @@ const RenderTechs = ({allTechs, setAllTechs}) =>{
         getAllTechs()
     }, [])
 
-    const removeTech = (id) =>{
+    const removeTech = (id: string) =>{
         kenzieHubApi.delete(`/users/techs/${id}`)
         .then(()=>{
             getAllTechs()
-            toast.info('Tecnologia removida', {autoclose: 1000})
+            toast.info('Tecnologia removida', {autoClose: 1000})
         })
         .catch(()=>{
-            toast.error('Ocorreu algum erro ao remover sua tecnologia', {autoclose: 1000})
+            toast.error('Ocorreu algum erro ao remover sua tecnologia', {autoClose: 1000})
         })
     }
 

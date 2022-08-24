@@ -1,25 +1,26 @@
 import { useNavigate } from "react-router-dom"
 import logo from "../../img/Logo.png"
 import Login from '../Login/index'
-import { useContext, useEffect, useState} from "react";
-import { AuthContext } from "../../contexts/AuthContext";
-import AddTechs from "../../Components/AddTechs";
+import { useEffect, useState} from "react";
+import { UseUserContext } from "../../contexts/AuthContext";
+import AddTechs, { ITechs } from "../../Components/AddTechs";
 import RenderTechs from "../../Components/RenderTechs";
 
-import { toast } from 'react-toastify';
 import { DivHeader, Header, Section, Main, DivHeaderTechs, ButtonClose} from "./styles"
 import './styled.css'
 
-const Dashboard = () =>{
-    const [addModal, setAddModal] = useState(false)
-    const [allTechs, setAllTechs] = useState([])
 
-    const {getInfoUser, user, loading} = useContext(AuthContext)
+const Dashboard = () =>{
+    const [addModal, setAddModal] = useState<boolean>(false)
+    const [allTechs, setAllTechs] = useState<ITechs[]>([])
+
+    const {getInfoUser, user, loading} = UseUserContext()
     const navigate = useNavigate()
 
+
     function goBack (){
-        localStorage.clear('KenzieHub:userId')
-        localStorage.clear('KenzieHub:token')
+        localStorage.clear()
+        localStorage.clear()
         navigate('/Login', {replace: true})
      }
 
@@ -27,12 +28,11 @@ const Dashboard = () =>{
         getInfoUser()
     }, [])
 
-
     if(loading) return <div>Carregando...</div>
      
     return (
         <>
-            {(user)?
+            {user.name ?
             <>
                 <header>
                     <DivHeader>
@@ -59,8 +59,7 @@ const Dashboard = () =>{
                     allTechs={allTechs}
                     setAllTechs={setAllTechs}
                     className={addModal? 'showModal': 'hiddenModal'}
-                    >
-                    </AddTechs>
+                    />
                     
                     <RenderTechs
                     allTechs={allTechs}
@@ -69,9 +68,7 @@ const Dashboard = () =>{
                 </Main>
             </>
             :
-            <Login>
-            {toast.error('Necessário fazer Login', {toastId: 'success1'}, {autoClose: 2000})}
-            </Login>
+            <Login />
             }
         </>
     )

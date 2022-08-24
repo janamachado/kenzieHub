@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import { DivContainer, StyledForm, InputText, ButtonRegister, Error } from './styles';
-import { useContext } from 'react';
-import { AuthContext } from '../../../contexts/AuthContext';
+import { IRegisterProps, UseUserContext } from '../../../contexts/AuthContext';
 
 const RegisterForm = () =>{
 
-    const {registerUser} = useContext(AuthContext)
+    const {registerUser} = UseUserContext()
 
     const formSchema = yup.object().shape({
 
@@ -42,7 +41,7 @@ const RegisterForm = () =>{
     })
 
     const {register, handleSubmit, formState: {errors}
-    } = useForm({
+    } = useForm<IRegisterProps>({
         resolver: yupResolver(formSchema)
         })
 
@@ -98,7 +97,6 @@ const RegisterForm = () =>{
 
                 <label>Selecionar módulo</label>
                 <select
-                name="course_module"
                 placeholder="Fale sobre você"
                 {...register('course_module')}>
                     <option value="m1">M1</option>
