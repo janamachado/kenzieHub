@@ -77,7 +77,6 @@ const AuthProvider = ({children}: IUserProviderProps) =>{
             const {user: userResponse, token} = response.data
             kenzieHubApi.defaults.headers.common["Authorization"] = `Bearer ${token}`
             setUser(userResponse)
-    
             localStorage.setItem('KenzieHub:userId', response.data.user.id)
             localStorage.setItem('KenzieHub:token', token)
             toast.success('Login feito com sucesso!', { autoClose: 2000 })
@@ -90,7 +89,6 @@ const AuthProvider = ({children}: IUserProviderProps) =>{
     const registerUser = (data: IRegisterProps)=>{
         kenzieHubApi.post('/users', data)
         .then((res) => {
-console.log(data)
             toast.success('Cadastro feito com sucesso! Faça o login.', { autoClose: 2000 })
             setTimeout(()=>{
                 navigate('/Login', {replace: true})
