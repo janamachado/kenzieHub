@@ -30,5 +30,5 @@ yarn start
 #### Pronto! A aplicação irá abrir em seguida no seu navegador.
 #### Ready! The application will then open in your browser
 
-
+Com muito apoio da minha querida Kenzie Academy Brasil <3 Onde pude aprender a apreder.
 
