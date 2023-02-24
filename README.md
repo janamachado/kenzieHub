@@ -13,7 +13,7 @@ This application is developed in TypeScript with React.js
 #### Para rodar localmente esse projeto, faça o clone deste repositório:
 #### To run this project locally, clone this repository:
 ````
-git clone git@github.com:janamachado/ecommerce-hamburgueria.git
+git clone git@github.com:janamachado/kenzieHub.git
 ````
 
 #### Execute o comando para instalar a dependências:
