@@ -1,4 +1,5 @@
 #### Você pode [acessar aqui o KenzieHub](https://react-entrega-s2-formulario-de-cadastro-janamachado.vercel.app/Login)
+#### You can [access the KenzieHub here](https://react-entrega-s2-formulario-de-cadastro-janamachado.vercel.app/Login)
 
 Esté é um projeto proposto pela instituição de ensino Kenzie Academy Brasil como desafio do desenvolvimento de um hub de tecnologias, onde o usuário deve se cadastrar, fazer login e assim ter acesso a sua dashboard, onde é possível criar novas hards skills selecionando o nível de conhecimento em cada uma, assim como a possibilidade de deletar uma tecnologia.
 
@@ -7,8 +8,6 @@ Essa aplicação é desenvolvida em TypeScript com React.js
 
 In this project my learnings were consolidated around the use of TypeScript, the use of the axios lib for API requests as well as consuming data from an API and rendering them, manipulation of data in localStorage, user authentication with token, autologin when updating the dashboard and post and delete routes as an API request.
 This application is developed in TypeScript with React.js
-
-#### You can [access the Hamburgueria here](https://react-entrega-s1-hamburgueria-da-kenzie-janamachado.vercel.app/)
 
 #### Para rodar localmente esse projeto, faça o clone deste repositório:
 #### To run this project locally, clone this repository:
