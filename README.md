@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+#### Você pode [acessar aqui o KenzieHub](https://react-entrega-s2-formulario-de-cadastro-janamachado.vercel.app/Login)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esté é um projeto proposto pela instituição de ensino Kenzie Academy Brasil como desafio do desenvolvimento de um hub de tecnologias, onde o usuário deve se cadastrar, fazer login e assim ter acesso a sua dashboard, onde é possível criar novas hards skills selecionando o nível de conhecimento em cada uma, assim como a possibilidade de deletar uma tecnologia.
 
-## Available Scripts
+Neste projeto meus aprendizados se consolidaram em torno do uso de TypeScript, a utilização da lib axios para requisições de API assim como consumir dados de uma API e renderizá-las, manipulação de dados no localStorage, autenticação de usuário com token, autologin ao atualizar a dashboard, rotas post e delete como requisição da API.
+Essa aplicação é desenvolvida em TypeScript com React.js
 
-In the project directory, you can run:
+In this project my learnings were consolidated around the use of TypeScript, the use of the axios lib for API requests as well as consuming data from an API and rendering them, manipulation of data in localStorage, user authentication with token, autologin when updating the dashboard and post and delete routes as an API request.
+This application is developed in TypeScript with React.js
 
-### `yarn start`
+#### You can [access the Hamburgueria here](https://react-entrega-s1-hamburgueria-da-kenzie-janamachado.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Para rodar localmente esse projeto, faça o clone deste repositório:
+#### To run this project locally, clone this repository:
+````
+git clone git@github.com:janamachado/ecommerce-hamburgueria.git
+````
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Execute o comando para instalar a dependências:
+#### Run command to install dependencies:
+````
+yarn
+````
 
-### `yarn test`
+#### Execute o comando para iniciar o servidor:
+#### Run the command to start the server:
+````
+yarn start
+````
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Pronto! A aplicação irá abrir em seguida no seu navegador.
+#### Ready! The application will then open in your browser
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
