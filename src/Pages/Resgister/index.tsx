@@ -1,7 +1,7 @@
 import Form from "../../Components/Form/RegisterForm"
 import { useNavigate } from "react-router-dom"
 
-import logo from "../../img/Logo.png"
+// import logo from "../../img/Logo.png"
 import { DivContainer } from "./styles"
 
 const Register = () =>{

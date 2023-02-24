@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import logo from "../../img/Logo.png"
+// import logo from "../../img/Logo.png"
 import Login from '../Login/index'
 import { useEffect, useState} from "react";
 import { UseUserContext } from "../../contexts/AuthContext";
@@ -37,7 +37,7 @@ const Dashboard = () =>{
                 <header>
                     <DivHeader>
                         <Header>
-                            <img src={logo} alt="Logo KenzieHub" />
+                            {/* <img src={logo} alt="Logo KenzieHub" /> */}
                             <button onClick={goBack}>Sair</button>
                         </Header>
                     </DivHeader>
